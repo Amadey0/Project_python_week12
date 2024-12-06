@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-API_KEY = 'ваш_API_ключ'  # Замените на ваш ключ
+API_KEY = ''
 
 @app.route('/weather', methods=['POST'])
 def get_weather():

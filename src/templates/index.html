@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Route Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Weather Route Planner</h1>
+    </header>
+    <main>
+        <form action="/" method="POST">
+            <label for="start-location">Start Location:</label>
+            <input type="text" id="start-location" name="start_location" placeholder="Enter start city" required>
+
+            <label for="end-location">End Location:</label>
+            <input type="text" id="end-location" name="end_location" placeholder="Enter destination city" required>
+
+            <button type="submit">Check Weather</button>
+        </form>
+
+        {% if weather_data %}
+        <section class="results">
+            <h2>Weather Results</h2>
+            <p><strong>Start Location:</strong> {{ weather_data.start_location }}</p>
+            <p><strong>End Location:</strong> {{ weather_data.end_location }}</p>
+            <p><strong>Weather Conditions:</strong> {{ weather_data.conditions }}</p>
+        </section>
+        {% elif error %}
+        <section class="error">
+            <p>Error: {{ error }}</p>
+        </section>
+        {% endif %}
+    </main>
+    <footer>
+        <p>© 2024 Weather Route Planner</p>
+    </footer>
+</body>
+</html>
