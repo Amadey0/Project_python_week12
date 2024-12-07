@@ -1,6 +1,6 @@
 import os
 from dataclasses import dataclass
-from api.api_keys import load
+from dotenv import load_dotenv
 
 
 class ImproperlyConfigured(Exception):
@@ -18,10 +18,6 @@ def getenv(var_name: str, cast_to=str) -> str:
         raise ImproperlyConfigured(var_name)
     except ValueError:
         raise ValueError(f"The value {value} can't be cast to {cast_to}")
-
-
-
-
 
 
 @dataclass
