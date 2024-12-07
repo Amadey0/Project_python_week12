@@ -1,6 +1,6 @@
 import os
 from dataclasses import dataclass
-import api.api_keys
+from api.api_keys import load
 
 
 class ImproperlyConfigured(Exception):
