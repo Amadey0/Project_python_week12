@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request
 from requests.exceptions import HTTPError, InvalidJSONError
 
-from src.services.weather import weather
+from filtered_weather import weather
 
 
 index_page = Blueprint('index_page', __name__,

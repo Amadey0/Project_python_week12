@@ -1,6 +1,6 @@
 import json
 
-from src.api.accuweather_api import AccuWeatherAPI
+from api_accuweather import AccuWeatherAPI
 
 
 class Weather:
